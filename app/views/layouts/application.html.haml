@@ -1,11 +1,22 @@
 !!!
 %html
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{charset: "UTF-8"}
+    %meta(name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no") 
     %title Tasquest
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    = yield
+    .header
+      .header__title
+        = link_to "tasquest", root_path
+      .header__right
+        - if user_signed_in?
+          = link_to "セーブして終わる", destroy_user_session_path, method: :delete, class: "header__right__btn"
+        - else
+          = link_to "つづきから", new_user_session_path, class: "header__right__btn"
+          = link_to "はじめから", new_user_registration_path, class: "header__right__btn"
+    .contents
+      = yield
