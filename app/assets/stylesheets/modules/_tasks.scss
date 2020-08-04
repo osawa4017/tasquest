@@ -1,0 +1,191 @@
+.left-contents {
+  height: calc(100vh - 60px);
+  width: 20%;
+  background-color: #aaa;
+  color: #fff;
+  float: left;
+
+  &__user-info {
+    &__basic {
+      display: flex;
+      height: 60px;
+
+      &__name {
+        height: 40px;
+        line-height: 40px;
+        margin: 10px 5px 10px 10px;
+      }
+
+      &__change-user-name-btn {
+        height: 40px;
+        width: 100px;
+        line-height: 40px;
+        text-align: center;
+        margin: 10px 5px;
+        background-color: #fff;
+        color: #00f;
+        text-decoration: none;
+        border: 1px solid #00f;
+      }
+    }
+
+    &__property {
+      &__num {
+        display: flex;
+        padding: 5px;
+
+        &__level {
+          padding: 5px 10px;
+        }
+
+        &__point {
+          padding: 5px 10px;
+        }
+      }
+
+      &__chart {
+        padding: 10px 10px 10px 15px;
+      }
+
+      &__counter {
+        padding: 10px 10px 10px 15px;
+      }
+    }
+
+    &__statuses {
+      padding: 10px 5px;
+
+      &__status {
+        td {
+          padding: 3px 10px;
+        }
+      }
+
+      &__rest {
+        display: flex;
+        height: 60px;
+
+        &__counter {
+          height: 40px;
+          line-height: 40px;
+          margin: 10px 5px 10px 10px;
+        }
+
+        &__deal-btn {
+          height: 40px;
+          width: 100px;
+          line-height: 40px;
+          text-align: center;
+          margin: 10px 5px;
+          background-color: #fff;
+          color: #00f;
+          text-decoration: none;
+          border: 1px solid #00f;
+        }
+      }
+    }
+
+    &__equipments {
+      padding: 10px 5px;
+
+      &__equipment {
+        td {
+          padding: 3px 10px;
+        }
+      }
+    }
+  }
+
+  &__battle {
+    height: 60px;
+    display: flex;
+
+    &__degree {
+      height: 40px;
+      line-height: 40px;
+      margin: 10px 5px 10px 15px;
+    }
+
+    &__challenge-battle-btn {
+      height: 40px;
+      width: 100px;
+      line-height: 40px;
+      text-align: center;
+      margin: 10px 5px;
+      background-color: #fff;
+      color: #00f;
+      text-decoration: none;
+      border: 1px solid #00f;
+    }
+  }
+}
+
+.right-contents {
+  height: calc(100vh - 60px);
+  width: 80%;
+  background-color: #00f;
+  color: #fff;
+  float: right;
+
+  &__notice {
+    background-color: #f00;
+    height: calc(100% / 8);
+
+    ul {
+      list-style: none;
+    }
+  }
+
+  &__routine-tasks {
+    background-color: #0f0;
+    height: calc(300% / 8);
+
+    td {
+      padding: 3px 10px;
+    }
+  }
+
+  &__todo-tasks {
+    background-color: #0ff;
+    height: calc(300% / 8);
+
+    &__more-btn {
+      display: block;
+      height: 40px;
+      width: 100px;
+      line-height: 40px;
+      text-align: center;
+      background-color: #fff;
+      color: #00f;
+      text-decoration: none;
+      border: 1px solid #00f;
+      margin: 10px 5px;
+    }
+
+    ul {
+      list-style: none;
+    }
+  }
+
+  &__settings {
+    background-color: #f0f;
+    height: calc(100% / 8);
+
+    &__btns {
+      display: flex;
+
+      &__btn {
+        display: block;
+        height: 40px;
+        width: 300px;
+        line-height: 40px;
+        text-align: center;
+        background-color: #fff;
+        color: #00f;
+        text-decoration: none;
+        border: 1px solid #00f;
+        margin: 10px 5px;
+      }
+    }
+  }
+}

@@ -1,0 +1,81 @@
+.left-contents
+  .left-contents__user-info
+    .left-contents__user-info__basic
+      .left-contents__user-info__basic__name
+        ユーザー名
+      = link_to "#", class: "left-contents__user-info__basic__change-user-name-btn" do
+        変更する
+    .left-contents__user-info__property
+      .left-contents__user-info__property__num
+        .left-contents__user-info__property__num__level
+          LV.1
+        .left-contents__user-info__property__num__point
+          0pt
+      .left-contents__user-info__property__chart
+        □ □ □ □ □ □ □ □ □ □ 
+      .left-contents__user-info__property__counter
+        次のレベルまで 10pt
+    .left-contents__user-info__statuses
+      %table.left-contents__user-info__statuses__status
+        %tr
+          %td
+            HP
+          %td
+            10pt
+        %tr
+          %td
+            攻撃
+          %td
+            5pt
+        %tr
+          %td
+            防御
+          %td
+            5pt
+      .left-contents__user-info__statuses__rest
+        .left-contents__user-info__statuses__rest__counter
+          残り 0pt
+        = link_to "#", class: "left-contents__user-info__statuses__rest__deal-btn" do
+          割り振る
+    .left-contents__user-info__equipments
+      %table.left-contents__user-info__equipments__equipment
+        %tr
+          %td
+            武器
+          %td
+            ボーンソード
+        %tr
+          %td
+            頭
+          %td
+            ボーンヘルム
+        %tr
+          %td
+            胸
+          %td
+            ボーンメイル
+        %tr
+          %td
+            腕
+          %td
+            ボーンアーム
+        %tr
+          %td
+            腰
+          %td
+            ボーンコイル
+        %tr
+          %td
+            足
+          %td
+            ボーングリーヴ
+        %tr
+          %td
+            装飾品
+          %td
+            装備なし
+  .left-contents__battle
+    .left-contents__battle__degree
+      初級
+    = link_to "#", class: "left-contents__battle__challenge-battle-btn" do
+      バトル

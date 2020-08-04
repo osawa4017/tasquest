@@ -3,9 +3,30 @@
   height: calc(100vh - 60px);
 
   &__introduce {
+    height: 240px;
     color: #fff;
-    text-align: center;
     font-size: 16px;
-    line-height: calc(100vh - 60px);
+    line-height: 240px;
+    text-align: center;
+  }
+
+  &__start-btn {
+    background-color: #ffa500;
+    width: 140px;
+    height: 60px;
+    font-size: 24px;
+    line-height: 60px;
+    text-align: center;
+    margin: 0 auto;
+
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: #00f;
+    }
   }
 }
