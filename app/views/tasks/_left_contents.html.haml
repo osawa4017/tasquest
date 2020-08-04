@@ -3,8 +3,8 @@
     .left-contents__user-info__basic
       .left-contents__user-info__basic__name
         ユーザー名
-      = link_to "#", class: "left-contents__user-info__basic__change-user-name-btn" do
-        変更する
+      = link_to edit_user_registration_path, class: "left-contents__user-info__basic__edit-user-btn" do
+        ユーザー情報を変更する
     .left-contents__user-info__property
       .left-contents__user-info__property__num
         .left-contents__user-info__property__num__level
