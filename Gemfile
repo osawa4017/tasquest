@@ -68,3 +68,5 @@ gem 'font-awesome-sass'
 gem 'devise'
 
 gem 'bullet'
+
+gem 'active_hash'
