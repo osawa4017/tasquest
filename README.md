@@ -14,14 +14,14 @@
 has_many :tasks
 
 ## tasksテーブル
-|Column        |Type      |Options                       |
-|--------------|----------|------------------------------|
-|user          |references|null: false, foreign_key: true|
-|content       |string    |null: false                   |
-|classification|integer   |null: false                   |
-|point         |integer   |null: false                   |
-|deadline      |datetime  |null: false                   |
-|is_complete   |boolean   |null: false, default: false   |
+|Column           |Type      |Options                       |
+|-----------------|----------|------------------------------|
+|user             |references|null: false, foreign_key: true|
+|content          |string    |null: false                   |
+|classification_id|integer   |null: false                   |
+|point            |integer   |null: false                   |
+|deadline         |datetime  |null: false                   |
+|is_complete      |boolean   |null: false, default: false   |
 
 ### Association
 belongs_to :user
