@@ -2,6 +2,15 @@ class TasksController < ApplicationController
   before_action :authenticate_user!, only: [:main]
 
   def index
+    @q = Task.ransack(params[:q])
+    @tasks = @q.result(distinct: true)
+    @maximum_per_page = 100
+
+    if @tasks.length <= @maximum_per_page
+      @results = @tasks.order("created_at DESC")
+    else
+      @results = @tasks.order("created_at DESC").page(params[:page]).per(@maximum_per_page)
+    end
   end
 
   def new

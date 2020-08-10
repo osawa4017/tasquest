@@ -35,7 +35,7 @@
     .right-contents__routine-tasks__btns
       = link_to new_task_path, class: "right-contents__routine-tasks__btns__add-task-btn" do
         タスクを追加する
-      = link_to "#", class: "right-contents__routine-tasks__btns__more-btn" do
+      = link_to tasks_path, class: "right-contents__routine-tasks__btns__more-btn" do
         もっと見る
   .right-contents__todo-tasks
     .right-contents__todo-tasks__title
@@ -67,7 +67,7 @@
     .right-contents__todo-tasks__btns
       = link_to new_task_path, class: "right-contents__todo-tasks__btns__add-task-btn" do
         タスクを追加する
-      = link_to "#", class: "right-contents__todo-tasks__btns__more-btn" do
+      = link_to tasks_path, class: "right-contents__todo-tasks__btns__more-btn" do
         もっと見る
   .right-contents__settings
     .right-contents__settings__title
