@@ -1,0 +1,31 @@
+.tasks-new-page
+  = form_with(model: @task, local: true) do |f|
+    %h3<
+      タスクを追加する
+
+    = f.hidden_field :user_id, value: current_user.id
+
+    .tasks-new-page__label
+      = f.label 'タスクの種類'
+    .tasks-new-page__classification
+      = f.collection_select :classification_id, Classification.all, :id, :name
+
+    .tasks-new-page__label
+      = f.label 'タスクの内容'
+    .tasks-new-page__content
+      = f.text_field :content, maxlength: 40
+
+    .tasks-new-page__label
+      = f.label 'ポイント'
+    .tasks-new-page__point
+      = f.number_field :point, min: 1, max: 5
+
+    .tasks-new-page__label
+      = f.label 'タスクの締め切り日時'
+    .tasks-new-page__deadline
+      = f.datetime_field :deadline
+
+    = f.hidden_field :is_complete, value: false
+
+    .tasks-new-page__add-btn
+      = f.submit 'タスクを登録する'

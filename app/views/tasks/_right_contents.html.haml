@@ -8,52 +8,67 @@
   .right-contents__routine-tasks
     .right-contents__routine-tasks__title
       ルーティンタスク
-    .right-contents__routine-tasks__rules
-      1つ達成ごとに1ptゲット
     .right-contents__routine-tasks__list
       %table
         %tr
-          %td
-            運動
-          %td
-            設定なし
-        %tr
-          %td
-            勉強
-          %td
-            設定なし
-        %tr
-          %td
-            食事
-          %td
-            設定なし
-        %tr
-          %td
-            睡眠
-          %td
-            設定なし
-        %tr
-          %td
-            仕事
-          %td
-            設定なし
+          %th
+            タスクの内容
+          %th
+            タスクの締め切り日時
+          %th
+            ポイント
+          %th
+            完了/未完了
+        - @routine_tasks.each do |routine|
+          %tr
+            %td
+              = routine.content
+            %td
+              = routine.deadline
+            %td
+              = "#{routine.point}pt"
+            %td
+              - if routine.is_complete
+                完了
+              - else
+                未完了
+    .right-contents__routine-tasks__btns
+      = link_to new_task_path, class: "right-contents__routine-tasks__btns__add-task-btn" do
+        タスクを追加する
+      = link_to "#", class: "right-contents__routine-tasks__btns__more-btn" do
+        もっと見る
   .right-contents__todo-tasks
     .right-contents__todo-tasks__title
       ToDoタスク
-    .right-contents__todo-tasks_list
-      %ul
-        %li
-          タスク１
-        %li
-          タスク２
-        %li
-          タスク３
-        %li
-          タスク４
-        %li
-          タスク５
-    = link_to "#", class: "right-contents__todo-tasks__more-btn" do
-      もっと見る
+    .right-contents__todo-tasks__list
+      %table
+        %tr
+          %th
+            タスクの内容
+          %th
+            タスクの締め切り日時
+          %th
+            ポイント
+          %th
+            完了/未完了
+        - @todo_tasks.each do |todo|
+          %tr
+            %td
+              = todo.content
+            %td
+              = todo.deadline
+            %td
+              = "#{todo.point}pt"
+            %td
+              - if todo.is_complete
+                完了
+              - else
+                未完了
+    .right-contents__todo-tasks__btns
+      = link_to new_task_path, class: "right-contents__todo-tasks__btns__add-task-btn" do
+        タスクを追加する
+      = link_to "#", class: "right-contents__todo-tasks__btns__more-btn" do
+        もっと見る
   .right-contents__settings
     .right-contents__settings__title
       他サービスとの連携
