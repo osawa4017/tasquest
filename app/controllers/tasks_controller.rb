@@ -1,9 +1,7 @@
 class TasksController < ApplicationController
-  before_action :authenticate_user!, only: [:index]
+  before_action :authenticate_user!, only: [:main]
 
   def index
-    @routine_tasks = Task.where(classification_id: 1).order("created_at DESC").first(5)
-    @todo_tasks    = Task.where(classification_id: 2).order("created_at DESC").first(5)
   end
 
   def new
@@ -20,6 +18,11 @@ class TasksController < ApplicationController
       render :new
       return
     end
+  end
+
+  def main
+    @routine_tasks = Task.where(classification_id: 1).order("created_at DESC").first(5)
+    @todo_tasks    = Task.where(classification_id: 2).order("created_at DESC").first(5)
   end
 
   private
