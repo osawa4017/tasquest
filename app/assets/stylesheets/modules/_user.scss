@@ -1,0 +1,25 @@
+.sign-up-page, .sign-in-page, .user-edit-page {
+  background-color: #aaa;
+  height: calc(100vh - 60px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__contents {
+    background-color: #fff;
+    width: 50%;
+    height: 50%;
+
+    input[type="text"] {
+      width: 30%;
+      height: 36px;
+      font-size: 16px;
+    }
+
+    input[type="email"], input[type="password"] {
+      width: 70%;
+      height: 36px;
+      font-size: 16px;
+    }
+  }
+}
