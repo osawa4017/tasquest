@@ -1,0 +1,35 @@
+.tasks-edit-page
+  = form_with(model: @task, local: true) do |f|
+    %h3<
+      タスクを編集する
+
+    .tasks-edit-page__label
+      = f.label 'タスクの種類'
+    .tasks-edit-page__classification
+      = f.collection_select :classification_id, Classification.all, :id, :name, { include_blank: "選択してください" }
+
+    .tasks-edit-page__label
+      = f.label 'タスクの内容'
+    .tasks-edit-page__content
+      = f.text_field :content, maxlength: 40
+
+    .tasks-edit-page__label
+      = f.label 'ポイント'
+    .tasks-edit-page__point
+      = f.number_field :point, min: 1, max: 5
+
+    .tasks-edit-page__label
+      = f.label 'タスクの締め切り日時'
+    .tasks-edit-page__deadline
+      = f.datetime_field :deadline
+
+    .tasks-edit-page__label
+      = f.label '完了/未完了'
+    .tasks-edit-page__complete
+      = f.radio_button :is_complete, 'true'
+      完了
+      = f.radio_button :is_complete, 'false'
+      未完了
+
+    .tasks-edit-page__add-btn
+      = f.submit 'タスクを編集する'
