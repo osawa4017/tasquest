@@ -3,13 +3,14 @@ class TasksController < ApplicationController
 
   def index
     @q = Task.ransack(params[:q])
+    @q.sorts = 'created_at DESC' if @q.sorts.empty?
     @tasks = @q.result(distinct: true)
     @maximum_per_page = 100
 
     if @tasks.length <= @maximum_per_page
-      @results = @tasks.order("created_at DESC")
+      @results = @tasks
     else
-      @results = @tasks.order("created_at DESC").page(params[:page]).per(@maximum_per_page)
+      @results = @tasks.page(params[:page]).per(@maximum_per_page)
     end
   end
 
