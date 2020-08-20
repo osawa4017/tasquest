@@ -26,6 +26,13 @@
         color: #fff;
         text-decoration: none;
       }
+
+      &__edit-user-btn:hover {
+        color: #00f;
+        text-decoration: underline;
+      }
+
+
     }
 
     &__property {
@@ -80,6 +87,11 @@
           color: #fff;
           text-decoration: none;
         }
+
+        &__deal-btn:hover {
+          color: #00f;
+          text-decoration: underline;
+        }
       }
     }
 
@@ -113,6 +125,11 @@
       background-color: #ffa500;
       color: #fff;
       text-decoration: none;
+    }
+
+    &__challenge-battle-btn:hover {
+      color: #00f;
+      text-decoration: underline;
     }
   }
 }
@@ -171,6 +188,11 @@
         text-decoration: none;
         margin: 10px 5px;
       }
+      
+      &__add-task-btn:hover {
+        color: #00f;
+        text-decoration: underline;
+      }
 
       &__more-btn {
         display: block;
@@ -182,6 +204,11 @@
         color: #fff;
         text-decoration: none;
         margin: 10px 5px;
+      }
+
+      &__more-btn:hover {
+        color: #00f;
+        text-decoration: underline;
       }
     }
   }
@@ -221,6 +248,11 @@
         margin: 10px 5px;
       }
 
+      &__add-task-btn:hover {
+        color: #00f;
+        text-decoration: underline;
+      }
+
       &__more-btn {
         display: block;
         height: 40px;
@@ -231,6 +263,11 @@
         color: #fff;
         text-decoration: none;
         margin: 10px 5px;
+      }
+
+      &__more-btn:hover {
+        color: #00f;
+        text-decoration: underline;
       }
     }
   }
@@ -256,6 +293,11 @@
         color: #fff;
         text-decoration: none;
         margin: 5px;
+      }
+
+      &__btn:hover {
+        color: #00f;
+        text-decoration: underline;
       }
     }
   }
