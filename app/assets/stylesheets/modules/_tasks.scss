@@ -123,12 +123,11 @@
 .right-contents {
   height: calc(100vh - 60px);
   width: 75%;
-  background-color: #00f;
+  background-color: #191970;
   color: #fff;
   float: right;
 
   &__notice {
-    background-color: #f00;
     height: calc(100% / 8);
 
     ul {
@@ -137,16 +136,15 @@
   }
 
   &__routine-tasks {
-    background-color: #0f0;
     height: calc(300% / 8);
 
     &__list {
       table {
         border-collapse: collapse;
-        border: solid 1px #000;
+        border: solid 1px #fff;
 
         th, td {
-          border: dashed 1px #000;
+          border: dashed 1px #fff;
           padding: 3px 10px;
         }
       }
@@ -164,7 +162,6 @@
         background-color: #fff;
         color: #00f;
         text-decoration: none;
-        border: 1px solid #00f;
         margin: 10px 5px;
       }
 
@@ -177,23 +174,21 @@
         background-color: #fff;
         color: #00f;
         text-decoration: none;
-        border: 1px solid #00f;
         margin: 10px 5px;
       }
     }
   }
 
   &__todo-tasks {
-    background-color: #0ff;
     height: calc(300% / 8);
 
     &__list {
       table {
         border-collapse: collapse;
-        border: solid 1px #000;
+        border: solid 1px #fff;
 
         th, td {
-          border: dashed 1px #000;
+          border: dashed 1px #fff;
           padding: 3px 10px;
         }
       }
@@ -211,7 +206,6 @@
         background-color: #fff;
         color: #00f;
         text-decoration: none;
-        border: 1px solid #00f;
         margin: 10px 5px;
       }
 
@@ -224,14 +218,12 @@
         background-color: #fff;
         color: #00f;
         text-decoration: none;
-        border: 1px solid #00f;
         margin: 10px 5px;
       }
     }
   }
 
   &__settings {
-    background-color: #f0f;
     height: calc(100% / 8);
 
     &__btns {
@@ -246,7 +238,6 @@
         background-color: #fff;
         color: #00f;
         text-decoration: none;
-        border: 1px solid #00f;
         margin: 10px 5px;
       }
     }
