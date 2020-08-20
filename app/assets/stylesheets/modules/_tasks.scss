@@ -302,3 +302,35 @@
     }
   }
 }
+
+.search-contents {
+  height: calc(100vh - 60px);
+  background-color: #191970;
+  color: #fff;
+
+  &__forms {
+    background-color: #696969;
+  }
+
+  &__results {
+    table {
+      border-collapse: collapse;
+      border: solid 1px #fff;
+
+      th, td {
+        border: dashed 1px #fff;
+        padding: 3px 10px;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: #ffa500;
+    }
+  }
+}
