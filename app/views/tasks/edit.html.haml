@@ -4,11 +4,6 @@
       タスクを編集する
 
     .tasks-edit-page__label
-      = f.label 'タスクの種類'
-    .tasks-edit-page__classification
-      = f.collection_select :classification_id, Classification.all, :id, :name, { include_blank: "選択してください" }
-
-    .tasks-edit-page__label
       = f.label 'タスクの内容'
     .tasks-edit-page__content
       = f.text_field :content, maxlength: 40

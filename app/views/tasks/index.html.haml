@@ -3,10 +3,6 @@
     = search_form_for @q do |f|
       .search-contents__forms__form
         .search-contents__forms__form__label
-          = f.label :classification_id, 'タスクの種類'
-        .search-contents__forms__form__field
-          = f.collection_check_boxes :classification_id_in, Classification.all, :id, :name
-        .search-contents__forms__form__label
           = f.label :content, 'タスクの内容'
         .search-contents__forms__form__field
           = f.search_field :content_cont
@@ -21,57 +17,50 @@
           未完了
       .search-contents__forms__submit-btn
         = f.submit '検索する'
-    - if @tasks.present?
-      .search-contents__forms__message
-        = "#{@tasks.length}件見つかりました"
-      .search-contents__results
-        %table
+  - if @tasks.present?
+    .search-contents__message
+      = "#{@tasks.length}件見つかりました"
+    .search-contents__results
+      %table
+        %caption
+          ToDoタスク
+        %tr
+          %th
+            タスクの内容
+          %th
+            タスクの締め切り日時
+          %th
+            ポイント
+          %th
+            完了/未完了
+          %th
+            編集
+          %th
+            削除
+        - @results.each do |result|
           %tr
-            %th
-              タスクの種類
-            %th
-              タスクの内容
-            %th
-              タスクの締め切り日時
-            %th
-              ポイント
-            %th
-              完了/未完了
-            %th
-              編集
-            %th
-              削除
-          - @results.each do |result|
-            %tr
-              %td
-                - if result.classification_id == 1
-                  Routine Task
-                - elsif result.classification_id == 2
-                  ToDo Task
-                - else
-                  ToDo Task
-              %td
-                = result.content
-              %td
-                = result.deadline
-              %td
-                = "#{result.point}pt"
-              %td
-                - if result.is_complete
-                  完了
-                - else
-                  未完了
-              %td
-                = link_to edit_task_path(result.id) do
-                  編集する
-              %td
-                = link_to "/tasks/#{result.id}", method: :delete do
-                  削除する
-      - if @tasks.length > @maximum_per_page
-        .search-contents__paginate
-          = paginate(@results)
-      - else
-        -# nop
+            %td
+              = result.content
+            %td
+              = result.deadline
+            %td
+              = "#{result.point}pt"
+            %td
+              - if result.is_complete
+                完了
+              - else
+                未完了
+            %td
+              = link_to edit_task_path(result.id) do
+                編集する
+            %td
+              = link_to "/tasks/#{result.id}", method: :delete do
+                削除する
+    - if @tasks.length > @maximum_per_page
+      .search-contents__paginate
+        = paginate(@results)
     - else
-      .search-contents__results
-        条件に一致するタスクはありませんでした
+      -# nop
+  - else
+    .search-contents__message
+      条件に一致するタスクはありませんでした

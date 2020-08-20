@@ -6,11 +6,6 @@
     = f.hidden_field :user_id, value: current_user.id
 
     .tasks-new-page__label
-      = f.label 'タスクの種類'
-    .tasks-new-page__classification
-      = f.collection_select :classification_id, Classification.all, :id, :name, { include_blank: "選択してください" }
-
-    .tasks-new-page__label
       = f.label 'タスクの内容'
     .tasks-new-page__content
       = f.text_field :content, maxlength: 40
