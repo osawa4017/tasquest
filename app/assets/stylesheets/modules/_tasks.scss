@@ -126,6 +126,11 @@
 
   &__notice {
     height: calc(100% / 8);
+    padding: 0 10px;
+
+    &__title {
+      padding: 5px 0;
+    }
 
     ul {
       list-style: none;
@@ -134,6 +139,11 @@
 
   &__routine-tasks {
     height: calc(300% / 8);
+    padding: 0 10px;
+
+    &__title {
+      padding: 5px 0;
+    }
 
     &__list {
       table {
@@ -178,6 +188,11 @@
 
   &__todo-tasks {
     height: calc(300% / 8);
+    padding: 0 10px;
+
+    &__title {
+      padding: 5px 0;
+    }
 
     &__list {
       table {
@@ -222,6 +237,11 @@
 
   &__settings {
     height: calc(100% / 8);
+    padding: 0 10px;
+
+    &__title {
+      padding: 5px 0;
+    }
 
     &__btns {
       display: flex;
@@ -235,7 +255,7 @@
         background-color: #ffa500;
         color: #fff;
         text-decoration: none;
-        margin: 10px 5px;
+        margin: 5px;
       }
     }
   }
