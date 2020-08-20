@@ -49,14 +49,14 @@ class TasksController < ApplicationController
   end
 
   def main
-    @routine_tasks = Task.where(classification_id: 1).order("created_at DESC").first(5)
-    @todo_tasks    = Task.where(classification_id: 2).order("created_at DESC").first(5)
+    @routine_tasks = Task.order("created_at DESC").first(5)
+    @todo_tasks    = Task.order("created_at DESC").first(5)
   end
 
   private
 
   def task_params
-    params.require(:task).permit(:user_id, :classification_id, :content, :point, :deadline, :is_complete)
+    params.require(:task).permit(:user_id, :content, :point, :deadline, :is_complete)
   end
 
   def set_task
