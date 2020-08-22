@@ -86,3 +86,5 @@ gem 'pry-rails'
 gem 'ransack'
 
 gem 'kaminari'
+
+gem 'whenever', require: false
