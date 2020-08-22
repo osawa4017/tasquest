@@ -3,15 +3,17 @@ class TasksController < ApplicationController
   before_action :set_task, only: [:edit, :update, :destroy]
 
   def index
-    @q = Task.ransack(params[:q])
+    @routine_tasks = Task.where(classification_id: 1, deadline: Time.current.end_of_day).order("created_at DESC")
+
+    @q = Task.where(classification_id: 2).ransack(params[:q])
     @q.sorts = 'created_at DESC' if @q.sorts.empty?
-    @tasks = @q.result(distinct: true)
+    @todo_tasks = @q.result(distinct: true)
     @maximum_per_page = 100
 
-    if @tasks.length <= @maximum_per_page
-      @results = @tasks
+    if @todo_tasks.length <= @maximum_per_page
+      @results = @todo_tasks
     else
-      @results = @tasks.page(params[:page]).per(@maximum_per_page)
+      @results = @todo_tasks.page(params[:page]).per(@maximum_per_page)
     end
   end
 
@@ -49,14 +51,14 @@ class TasksController < ApplicationController
   end
 
   def main
-    @routine_tasks = Task.order("created_at DESC").first(5)
-    @todo_tasks    = Task.order("created_at DESC").first(5)
+    @routine_tasks = Task.where(classification_id: 1, deadline: Time.current.end_of_day).order("created_at DESC")
+    @todo_tasks    = Task.where(classification_id: 2).order("created_at DESC").first(5)
   end
 
   private
 
   def task_params
-    params.require(:task).permit(:user_id, :content, :point, :deadline, :is_complete)
+    params.require(:task).permit(:user_id, :content, :classification_id, :point, :deadline, :is_complete)
   end
 
   def set_task
