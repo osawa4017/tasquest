@@ -5,6 +5,8 @@
 
     = f.hidden_field :user_id, value: current_user.id
 
+    = f.hidden_field :classification_id, value: 2
+
     .tasks-new-page__label
       = f.label 'タスクの内容'
     .tasks-new-page__content
@@ -24,3 +26,7 @@
 
     .tasks-new-page__add-btn
       = f.submit 'タスクを登録する'
+
+    .tasks-new-page__return-btn
+      = link_to tasks_path do
+        タスク一覧ページへ
