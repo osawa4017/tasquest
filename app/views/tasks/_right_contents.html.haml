@@ -14,19 +14,11 @@
           %th
             タスクの内容
           %th
-            タスクの締め切り日時
-          %th
-            ポイント
-          %th
             完了/未完了
         - @routine_tasks.each do |routine|
           %tr
             %td
               = routine.content
-            %td
-              = routine.deadline
-            %td
-              = "#{routine.point}pt"
             %td
               - if routine.is_complete
                 完了
