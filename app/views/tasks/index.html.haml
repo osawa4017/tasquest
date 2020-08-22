@@ -17,9 +17,34 @@
           未完了
       .search-contents__forms__submit-btn
         = f.submit '検索する'
-  - if @tasks.present?
+  - if @routine_tasks.present?
+    .search-contents__results
+      %table
+        %caption
+          ルーティンタスク
+        %tr
+          %th
+            タスクの内容
+          %th
+            完了/未完了
+          %th
+            編集
+        - @routine_tasks.each do |routine|
+          %tr
+            %td
+              = routine.content
+            %td
+              - if routine.is_complete
+                完了
+              - else
+                未完了
+            %td
+              = link_to edit_task_path(routine.id) do
+                編集する
+  - else
     .search-contents__message
-      = "#{@tasks.length}件見つかりました"
+      現在登録されているルーティンタスクはありません
+  - if @todo_tasks.present?
     .search-contents__results
       %table
         %caption
@@ -56,7 +81,7 @@
             %td
               = link_to "/tasks/#{result.id}", method: :delete do
                 削除する
-    - if @tasks.length > @maximum_per_page
+    - if @todo_tasks.length > @maximum_per_page
       .search-contents__paginate
         = paginate(@results)
     - else
@@ -64,3 +89,7 @@
   - else
     .search-contents__message
       条件に一致するタスクはありませんでした
+
+  .search-contents__return-btn
+    = link_to main_tasks_path do
+      メインページへ
