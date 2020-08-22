@@ -15,8 +15,6 @@ ActiveRecord::Schema.define(version: 2020_08_22_112519) do
   create_table "routines", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "content", null: false
-    t.date "deadline"
-    t.boolean "is_complete"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_routines_on_user_id"
@@ -30,6 +28,7 @@ ActiveRecord::Schema.define(version: 2020_08_22_112519) do
     t.boolean "is_complete", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "classification_id", null: false
     t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 

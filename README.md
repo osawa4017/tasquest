@@ -70,6 +70,7 @@ has_many :routines
 |-----------------|----------|------------------------------|
 |user             |references|null: false, foreign_key: true|
 |content          |string    |null: false                   |
+|classification_id|integer   |null: false                   |
 |point            |integer   |null: false                   |
 |deadline         |datetime  |null: false                   |
 |is_complete      |boolean   |null: false, default: false   |
@@ -83,8 +84,6 @@ belongs_to :user
 |-----------|----------|------------------------------|
 |user       |references|null: false, foreign_key: true|
 |content    |string    |null: false                   |
-|deadline   |date      |                              |
-|is_complete|boolean   |                              |
 
 ### Association
 belongs_to :user
