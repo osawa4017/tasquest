@@ -63,6 +63,7 @@ http://52.194.69.16/
 
 ### Association
 has_many :tasks
+has_many :routines
 
 ## tasksテーブル
 |Column           |Type      |Options                       |
@@ -72,6 +73,18 @@ has_many :tasks
 |point            |integer   |null: false                   |
 |deadline         |datetime  |null: false                   |
 |is_complete      |boolean   |null: false, default: false   |
+
+### Association
+belongs_to :user
+
+
+## routinesテーブル
+|Column     |Type      |Options                       |
+|-----------|----------|------------------------------|
+|user       |references|null: false, foreign_key: true|
+|content    |string    |null: false                   |
+|deadline   |date      |                              |
+|is_complete|boolean   |                              |
 
 ### Association
 belongs_to :user
