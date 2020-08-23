@@ -28,7 +28,8 @@ class TasksController < ApplicationController
       render :create
       return
     else
-      render :new
+      flash[:alert] = "タスクを追加できませんでした"
+      redirect_to main_tasks_path
       return
     end
   end
@@ -41,13 +42,21 @@ class TasksController < ApplicationController
       render :update
       return
     else
-      render :edit
+      flash[:alert] = "タスクを編集できませんでした"
+      redirect_to main_tasks_path
       return
     end
   end
 
   def destroy
-    @task.destroy
+    if @task.destroy
+      render :destroy
+      return
+    else
+      flash[:alert] = "タスクを削除できませんでした"
+      redirect_to main_tasks_path
+      return
+    end
   end
 
   def main
