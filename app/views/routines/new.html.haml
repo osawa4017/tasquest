@@ -1,0 +1,18 @@
+.routines-new-page
+  = form_with(model: @routine, local: true) do |f|
+    %h3<
+      タスクを追加する
+
+    = f.hidden_field :user_id, value: current_user.id
+
+    .routines-new-page__label
+      = f.label 'タスクの内容'
+    .routines-new-page__content
+      = f.text_field :content, maxlength: 40
+
+    .routines-new-page__add-btn
+      = f.submit 'ルーティンを登録する'
+
+    .routines-new-page__return-btn
+      = link_to main_tasks_path do
+        メインページへ
