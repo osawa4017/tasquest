@@ -1,0 +1,16 @@
+.routines-edit-page
+  = form_with(model: @routine, local: true) do |f|
+    %h3<
+      ルーティンを編集する
+
+    .routines-edit-page__label
+      = f.label 'タスクの内容'
+    .routines-edit-page__content
+      = f.text_field :content, maxlength: 40
+
+    .routines-edit-page__edit-btn
+      = f.submit 'タスクを編集する'
+
+    .routines-edit-page__return-btn
+      = link_to main_tasks_path do
+        メインページへ
