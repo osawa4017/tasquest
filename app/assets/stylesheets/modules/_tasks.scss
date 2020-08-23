@@ -175,10 +175,10 @@
     &__btns {
       display: flex;
 
-      &__add-task-btn {
+      &__routine-list-btn {
         display: block;
         height: 40px;
-        width: 160px;
+        width: 200px;
         line-height: 40px;
         text-align: center;
         background-color: #ffa500;
@@ -187,7 +187,7 @@
         margin: 10px 5px;
       }
       
-      &__add-task-btn:hover {
+      &__routine-list-btn:hover {
         color: #00f;
         text-decoration: underline;
       }
@@ -195,7 +195,7 @@
       &__more-btn {
         display: block;
         height: 40px;
-        width: 100px;
+        width: 180px;
         line-height: 40px;
         text-align: center;
         background-color: #ffa500;
@@ -237,7 +237,7 @@
       &__add-task-btn {
         display: block;
         height: 40px;
-        width: 160px;
+        width: 180px;
         line-height: 40px;
         text-align: center;
         background-color: #ffa500;
@@ -254,7 +254,7 @@
       &__more-btn {
         display: block;
         height: 40px;
-        width: 100px;
+        width: 180px;
         line-height: 40px;
         text-align: center;
         background-color: #ffa500;
