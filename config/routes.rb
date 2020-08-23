@@ -7,5 +7,5 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :routines, only: [:new, :create, :edit, :update, :destroy]
+  resources :routines, except: [:show]
 end
