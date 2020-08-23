@@ -1,0 +1,34 @@
+.routines-index-page
+  - if @routines.present?
+    .routines-index-page__table
+      %table
+        %caption
+          ルーティン一覧
+        %tr
+          %th
+            タスクの内容
+          %th
+            編集
+          %th
+            削除
+        - @routines.each do |routine|
+          %tr
+            %td
+              = routine.content
+            %td
+              = link_to edit_routine_path(routine.id) do
+                編集する
+            %td
+              = link_to "/routines/#{routine.id}", method: :delete do
+                削除する
+  - else
+    .routine-index-page__message
+      現在登録されているルーティンはありません
+
+  .routine-index-page__add-btn
+    = link_to new_routine_path do
+      ルーティンを追加する
+
+  .routine-index-page__return-btn
+    = link_to main_tasks_path do
+      メインページへ
