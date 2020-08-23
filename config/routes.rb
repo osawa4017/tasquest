@@ -6,4 +6,6 @@ Rails.application.routes.draw do
       get 'main'
     end
   end
+
+  resources :routines, only: [:new, :create, :edit, :update, :destroy]
 end
