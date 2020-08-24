@@ -17,6 +17,12 @@ tasquest
 # URL
 http://52.194.69.16/
 
+## テスト用アカウント
+Email: test@gmail.com
+Password: testtest
+
+このメールアドレスはこのアプリケーションにログインするための架空のものです
+
 # 開発環境
 - Ruby (ver.2.5.1)
 - Ruby on Rails (ver.5.0.7.2)
