@@ -8,13 +8,37 @@
     .left-contents__user-info__property
       .left-contents__user-info__property__num
         .left-contents__user-info__property__num__level
-          LV.1
+          = "Lv.#{@level}"
         .left-contents__user-info__property__num__point
-          0pt
+          = "#{@total_points}pt"
       .left-contents__user-info__property__chart
-        □ □ □ □ □ □ □ □ □ □ 
+        - case @counter
+        - when 0 then
+          ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ 
+        - when 1 then
+          ■ ■ ■ ■ ■ ■ ■ ■ ■ □ 
+        - when 2 then
+          ■ ■ ■ ■ ■ ■ ■ ■ □ □ 
+        - when 3 then
+          ■ ■ ■ ■ ■ ■ ■ □ □ □ 
+        - when 4 then
+          ■ ■ ■ ■ ■ ■ □ □ □ □ 
+        - when 5 then
+          ■ ■ ■ ■ ■ □ □ □ □ □ 
+        - when 6 then
+          ■ ■ ■ ■ □ □ □ □ □ □ 
+        - when 7 then
+          ■ ■ ■ □ □ □ □ □ □ □ 
+        - when 8 then
+          ■ ■ □ □ □ □ □ □ □ □ 
+        - when 9 then
+          ■ □ □ □ □ □ □ □ □ □ 
+        - when 10 then
+          □ □ □ □ □ □ □ □ □ □ 
+        - else
+          □ □ □ □ □ □ □ □ □ □ 
       .left-contents__user-info__property__counter
-        次のレベルまで 10pt
+        = "次のレベルまで #{@counter}pt"
     .left-contents__user-info__statuses
       %table.left-contents__user-info__statuses__status
         %tr

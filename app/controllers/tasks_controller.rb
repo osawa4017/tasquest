@@ -3,9 +3,9 @@ class TasksController < ApplicationController
   before_action :set_task, only: [:edit, :update, :destroy]
 
   def index
-    @routine_tasks = Task.where(classification_id: 1, deadline: Time.current.end_of_day).order("created_at DESC")
+    @routine_tasks = Task.where(user_id: current_user.id, classification_id: 1, deadline: Time.current.end_of_day).order("created_at DESC")
 
-    @q = Task.where(classification_id: 2).ransack(params[:q])
+    @q = Task.where(user_id: current_user.id, classification_id: 2).ransack(params[:q])
     @q.sorts = 'created_at DESC' if @q.sorts.empty?
     @todo_tasks = @q.result(distinct: true)
     @maximum_per_page = 100
@@ -60,8 +60,15 @@ class TasksController < ApplicationController
   end
 
   def main
-    @routine_tasks = Task.where(classification_id: 1, deadline: Time.current.end_of_day).order("created_at DESC")
-    @todo_tasks    = Task.where(classification_id: 2).order("created_at DESC").first(5)
+    @routine_tasks = Task.where(user_id: current_user.id, classification_id: 1, deadline: Time.current.end_of_day).order("created_at DESC")
+    @todo_tasks    = Task.where(user_id: current_user.id, classification_id: 2).order("created_at DESC").first(5)
+    completes      = Task.where(user_id: current_user.id, is_complete: true)
+    @total_points = 0
+    completes.each do |complete|
+      @total_points = @total_points + complete.point
+    end
+    @level = (@total_points / 10) + 1
+    @counter = 10 - (@total_points % 10)
   end
 
   private
