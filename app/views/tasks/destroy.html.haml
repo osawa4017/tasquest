@@ -1,5 +1,8 @@
 .tasks-success-page
   %h3<
     タスクを削除しました。
+  .tasks-success-page__return-btn
+    = link_to tasks_path do
+      タスク一覧ページへ
   = link_to main_tasks_path do
     メインページへ
