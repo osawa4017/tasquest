@@ -1,5 +1,5 @@
 set :output, 'log/crontab.log'
-set :environment, :development, :production
+set :environment, :development
 
 job_type :rake, 'cd :path && :environment_variable=:environment bundle exec rake :task :output'
 
