@@ -22,13 +22,13 @@
               = link_to "/routines/#{routine.id}", method: :delete do
                 削除する
   - else
-    .routine-index-page__message
+    .routines-index-page__message
       現在登録されているルーティンはありません
 
-  .routine-index-page__add-btn
+  .routines-index-page__add-btn
     = link_to new_routine_path do
       ルーティンを追加する
 
-  .routine-index-page__return-btn
+  .routines-index-page__return-btn
     = link_to main_tasks_path do
       メインページへ
