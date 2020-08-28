@@ -7,7 +7,7 @@ namespace :create_todays_routine do
       begin
         routines = Routine.where(user_id: user.id)
         routines.each do |routine|
-          Task.create!(user_id: user.id, content: routine.content, point: 1, classification_id: 2, deadline: Time.current.end_of_day, is_complete: false)
+          Task.create!(user_id: user.id, content: routine.content, point: 1, classification_id: 1, deadline: Time.current.end_of_day, is_complete: false)
         end
       rescue => exception
         logger.error "user_id: #{user.id}でエラーが発生"
