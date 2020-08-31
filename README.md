@@ -70,6 +70,7 @@ Password: testtest
 ### Association
 has_many :tasks
 has_many :routines
+has_one  :status
 
 ## tasksテーブル
 |Column           |Type      |Options                       |
@@ -90,6 +91,17 @@ belongs_to :user
 |-----------|----------|------------------------------|
 |user       |references|null: false, foreign_key: true|
 |content    |string    |null: false                   |
+
+### Association
+belongs_to :user
+
+## statusesテーブル
+|Column |Type      |Options                       |
+|-------|----------|------------------------------|
+|user   |references|null: false, foreign_key: true|
+|heart  |integer   |null: false                   |
+|attack |integer   |null: false                   |
+|defense|integer   |null: false                   |
 
 ### Association
 belongs_to :user
