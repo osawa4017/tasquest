@@ -85,7 +85,6 @@ has_one  :status
 ### Association
 belongs_to :user
 
-
 ## routinesテーブル
 |Column     |Type      |Options                       |
 |-----------|----------|------------------------------|
