@@ -55,7 +55,7 @@ Password: testtest
 # データベース設計
 
 ## ER図
-![01_erd_tasquest](https://user-images.githubusercontent.com/64793100/92329672-e628f200-f0a3-11ea-956f-fa165dd1f908.png)
+![01_erd_tasquest](https://user-images.githubusercontent.com/64793100/92329734-80893580-f0a4-11ea-91c1-efbee50ff3e2.png)
 
 ## usersテーブル
 |Column                |Type    |Options                                            |
