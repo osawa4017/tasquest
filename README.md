@@ -18,8 +18,8 @@ tasquest
 http://52.194.69.16/
 
 ## テスト用アカウント
-Email: test@gmail.com
-Password: testtest
+- Email: test@gmail.com
+- Password: testtest
 
 このメールアドレスはこのアプリケーションにログインするための架空のものです
 
@@ -68,9 +68,9 @@ Password: testtest
 |remember_created_at   |datetime|                                                   |
 
 ### Association
-has_many :tasks
-has_many :routines
-has_one  :status
+- has_many :tasks
+- has_many :routines
+- has_one  :status
 
 ## tasksテーブル
 |Column           |Type      |Options                       |
@@ -83,7 +83,7 @@ has_one  :status
 |is_complete      |boolean   |null: false, default: false   |
 
 ### Association
-belongs_to :user
+- belongs_to :user
 
 ## routinesテーブル
 |Column     |Type      |Options                       |
@@ -103,4 +103,4 @@ belongs_to :user
 |defense|integer   |null: false                   |
 
 ### Association
-belongs_to :user
+- belongs_to :user
