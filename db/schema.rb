@@ -22,9 +22,9 @@ ActiveRecord::Schema.define(version: 2020_08_31_075928) do
 
   create_table "statuses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.integer "heart", null: false
-    t.integer "attack", null: false
-    t.integer "defense", null: false
+    t.integer "heart", default: 0, null: false
+    t.integer "attack", default: 0, null: false
+    t.integer "defense", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_statuses_on_user_id"

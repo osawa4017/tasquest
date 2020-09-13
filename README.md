@@ -55,7 +55,8 @@ http://52.194.69.16/
 # データベース設計
 
 ## ER図
-![01_erd_tasquest](https://user-images.githubusercontent.com/64793100/92329734-80893580-f0a4-11ea-91c1-efbee50ff3e2.png)
+![02_erd_tasquest](https://user-images.githubusercontent.com/64793100/93011141-a21b7d00-f5ce-11ea-93bb-cd74a4c0d628.png)
+
 
 ## usersテーブル
 |Column                |Type    |Options                                            |
@@ -98,9 +99,9 @@ belongs_to :user
 |Column |Type      |Options                       |
 |-------|----------|------------------------------|
 |user   |references|null: false, foreign_key: true|
-|heart  |integer   |null: false                   |
-|attack |integer   |null: false                   |
-|defense|integer   |null: false                   |
+|heart  |integer   |null: false, default: 0       |
+|attack |integer   |null: false, default: 0       |
+|defense|integer   |null: false, default: 0       |
 
 ### Association
 - belongs_to :user
