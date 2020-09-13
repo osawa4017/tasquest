@@ -46,6 +46,8 @@ $(document).on('turbolinks:load', ()=> {
     }
   }
 
+  status_value();
+
   $('#status_heart').on('keyup change', function() {
     status_value();
   });
