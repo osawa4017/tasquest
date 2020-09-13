@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   end
 
   resources :routines, except: [:show]
+
+  resources :statuses, only: [:new, :create, :edit, :update]
 end

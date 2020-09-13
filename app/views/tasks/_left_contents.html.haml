@@ -45,21 +45,21 @@
           %td
             HP
           %td
-            10pt
+            = "#{@heart}pt"
         %tr
           %td
             攻撃
           %td
-            5pt
+            = "#{@attack}pt"
         %tr
           %td
             防御
           %td
-            5pt
+            = "#{@defense}pt"
       .left-contents__user-info__statuses__rest
         .left-contents__user-info__statuses__rest__counter
-          残り 0pt
-        = link_to "#", class: "left-contents__user-info__statuses__rest__deal-btn" do
+          = "割り振り可能:#{@surplus}pt"
+        = link_to new_status_path, class: "left-contents__user-info__statuses__rest__deal-btn" do
           割り振る
     .left-contents__user-info__equipments
       %table.left-contents__user-info__equipments__equipment

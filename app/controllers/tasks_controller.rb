@@ -60,8 +60,11 @@ class TasksController < ApplicationController
   end
 
   def main
+    # タスク表示
     @routine_tasks = Task.where(user_id: current_user.id, classification_id: 1, deadline: Time.current.end_of_day).order("created_at DESC")
     @todo_tasks    = Task.where(user_id: current_user.id, classification_id: 2).order("created_at DESC").first(5)
+
+    # ユーザプロパティ表示
     completes      = Task.where(user_id: current_user.id, is_complete: true)
     @total_points = 0
     completes.each do |complete|
@@ -69,6 +72,23 @@ class TasksController < ApplicationController
     end
     @level = (@total_points / 10) + 1
     @counter = 10 - (@total_points % 10)
+
+    # ステータス表示
+    status = Status.find_by(user_id: current_user.id)
+    heart = 0
+    attack = 0
+    defense = 0
+    if status
+      heart = status.heart
+      attack = status.attack
+      defense = status.defense
+    else
+      # do nothing
+    end
+    @surplus = @total_points - (heart + attack + defense)
+    @heart = heart + 10
+    @attack = attack + 5
+    @defense = defense + 5
   end
 
   private

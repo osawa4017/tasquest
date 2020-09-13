@@ -1,0 +1,30 @@
+= form_with model: @status do |f|
+
+  = f.hidden_field :user_id, value: current_user.id
+
+  .status__label
+    = f.label '体力'
+  .status__form
+    = f.number_field :heart
+    pt + (基礎体力10pt)
+
+  .status__label
+    = f.label '攻撃'
+  .status__form
+    = f.number_field :attack
+    pt + (基礎攻撃5pt)
+
+  .status__label
+    = f.label '防御'
+  .status__form
+    = f.number_field :defense
+    pt + (基礎防御5pt)
+
+  #total-points
+    = "#{@total_points}"
+
+  .status__surplus
+    = "残り#{@total_points}pt割り振りできます"
+
+  .status__submit-btn
+    = f.submit '割り振る'

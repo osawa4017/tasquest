@@ -88,3 +88,5 @@ gem 'ransack'
 gem 'kaminari'
 
 gem 'whenever', require: false
+
+gem 'jquery-rails'

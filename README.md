@@ -18,8 +18,8 @@ tasquest
 http://52.194.69.16/
 
 ## テスト用アカウント
-Email: test@gmail.com
-Password: testtest
+- Email: test@gmail.com
+- Password: testtest
 
 このメールアドレスはこのアプリケーションにログインするための架空のものです
 
@@ -55,7 +55,8 @@ Password: testtest
 # データベース設計
 
 ## ER図
-あとで作成する
+![02_erd_tasquest](https://user-images.githubusercontent.com/64793100/93011141-a21b7d00-f5ce-11ea-93bb-cd74a4c0d628.png)
+
 
 ## usersテーブル
 |Column                |Type    |Options                                            |
@@ -68,8 +69,9 @@ Password: testtest
 |remember_created_at   |datetime|                                                   |
 
 ### Association
-has_many :tasks
-has_many :routines
+- has_many :tasks
+- has_many :routines
+- has_one  :status
 
 ## tasksテーブル
 |Column           |Type      |Options                       |
@@ -82,8 +84,7 @@ has_many :routines
 |is_complete      |boolean   |null: false, default: false   |
 
 ### Association
-belongs_to :user
-
+- belongs_to :user
 
 ## routinesテーブル
 |Column     |Type      |Options                       |
@@ -93,3 +94,14 @@ belongs_to :user
 
 ### Association
 belongs_to :user
+
+## statusesテーブル
+|Column |Type      |Options                       |
+|-------|----------|------------------------------|
+|user   |references|null: false, foreign_key: true|
+|heart  |integer   |null: false, default: 0       |
+|attack |integer   |null: false, default: 0       |
+|defense|integer   |null: false, default: 0       |
+
+### Association
+- belongs_to :user
